@@ -1,0 +1,6 @@
+[
+  { "nombre": "EC2", "estado": "Investigando" },
+  { "nombre": "S3", "estado": "Activo" },
+  { "nombre": "RDS", "estado": "Resuelto" },
+  { "nombre": "Lambda", "estado": "Activo" }
+]

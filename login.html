@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Wibond</title>
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      display: flex;
+      width: 900px;
+      height: 600px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #fff;
+    }
+
+    .login-form {
+      flex: 1;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .login-form .logo {
+      font-weight: bold;
+      font-size: 24px;
+      color: #3e3eff;
+      margin-bottom: 20px;
+    }
+
+    .login-form h2 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .login-form p {
+      margin-bottom: 30px;
+      color: #666;
+    }
+
+    form label {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    form input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .form-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #3e3eff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .divider {
+      text-align: center;
+      margin: 20px 0;
+      color: #999;
+    }
+
+    .google-login {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .register {
+      margin-top: 20px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .register a {
+      color: #3e3eff;
+      text-decoration: none;
+    }
+
+    .login-image {
+      flex: 1;
+      background: #3e3eff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+  <body>
+    <div class="login-container">
+      <div class="login-form">
+        <!-- <div class="logo">WIBOND</div> -->
+        <h2>¡Bienvenido!</h2>
+        <p>Iniciá sesión para continuar</p>
+
+        <form>
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Ingrese su correo"
+            required
+          />
+
+          <label for="password">Contraseña</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Ingrese su contraseña"
+            required
+          />
+
+          <div class="form-options">
+            <label><input type="checkbox" /> Recordarme</label>
+            <a href="#">¿Olvidaste tu contraseña?</a>
+          </div>
+
+          <button type="submit">Iniciar sesión</button>
+
+          <div class="divider">o</div>
+
+          <button class="google-login" type="button">
+            <img
+              src="https://img.icons8.com/color/16/000000/google-logo.png"
+              alt="Google"
+            />
+            Iniciar sesión con Google
+          </button>
+
+          <p class="register">
+            ¿No tenés cuenta? <a href="#">Registrate acá</a>
+          </p>
+        </form>
+      </div>
+
+      <div class="login-image">
+        <img
+          src="img/logo-wibond.png"
+          style="width: 100px"
+          alt="Login ilustración"
+        />
+      </div>
+    </div>
+    <script src="js/login.js"></script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Wibond</title>
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <script src="https://unpkg.com/aws-amplify@5.0.4/dist/aws-amplify.min.js"></script>
+  </head>
+  <body>
+    <main class="login">
+      <div class="logo" style="margin-left: 25px">
+        <img src="img/logo-wibond.png" alt="Wibond Logo" />
+      </div>
+      <h2>Iniciar sesión</h2>
+      <form id="loginForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" required />
+
+        <button type="submit">Entrar</button>
+        <p id="error" class="error oculto">Credenciales inválidas</p>
+      </form>
+    </main>
+    <script src="js/login.js"></script>
+  </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Wibond</title>
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main class="login">
+      <div class="logo" style="margin-left: 25px">
+        <img src="img/logo-wibond.png" alt="Wibond Logo" />
+      </div>
+      <h2>Iniciar sesión</h2>
+      <form id="loginForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" required />
+
+        <button type="submit">Entrar</button>
+        <p id="error" class="error oculto">Credenciales inválidas</p>
+      </form>
+    </main>
+    <script src="js/login.js"></script>
+  </body>
+</html> -->
