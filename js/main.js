@@ -35,7 +35,7 @@ function getColorClass(estado) {
       return "verde";
     case "Investigando":
       return "amarillo";
-    case "Resuelto":
+    case "Error":
       return "rojo";
     default:
       return "gris";
