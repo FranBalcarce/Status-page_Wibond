@@ -1,9 +1,24 @@
+// Si ya está logueado, redirigir al dashboard (index.html)
+if (localStorage.getItem("logueado") === "true") {
+  window.location.href = "index.html";
+}
+// Verificar si está logueado, si no, redirigir al login
+if (localStorage.getItem("logueado") !== "true") {
+  window.location.href = "login.html";
+}
+
+// Función para cerrar sesión
+function logout() {
+  localStorage.removeItem("logueado");
+  window.location.href = "login.html";
+}
+
 document.getElementById("loginForm").addEventListener("submit", function (e) {
   e.preventDefault();
+
   const email = document.getElementById("email").value;
   const pass = document.getElementById("password").value;
 
-  // Login simulado
   if (email === "admin@wibond.com" && pass === "123456") {
     localStorage.setItem("logueado", "true");
     window.location.href = "index.html";

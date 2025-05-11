@@ -42,6 +42,36 @@ function getColorClass(estado) {
   }
 }
 
+fetch("http://localhost:3000/api/servicios")
+  .then((res) => res.json())
+  .then((data) => {
+    const container = document.getElementById("servicios");
+    data.forEach((servicio) => {
+      const div = document.createElement("div");
+      div.className = "servicio";
+      div.innerHTML = `<h4>${servicio.nombre}</h4><p>${servicio.estado}</p>`;
+      container.appendChild(div);
+    });
+  });
+
+// Obtener y mostrar métricas
+fetch("http://localhost:3000/api/metricas")
+  .then((res) => res.json())
+  .then((data) => {
+    document.querySelector(".card:nth-child(1) p").textContent =
+      data.uptimePromedio;
+    document.querySelector(".card:nth-child(2) p").textContent = data.mttr;
+    document.querySelector(".card:nth-child(3) p").textContent =
+      data.eventosCriticos;
+
+    // Actualizar gráfico de línea con datos reales
+    if (window.lineChart) {
+      lineChart.data.labels = data.fechas;
+      lineChart.data.datasets[0].data = data.historicoIncidentes;
+      lineChart.update();
+    }
+  });
+
 // --------------------------------------------------------------------------------------------------------------------
 // Para actualizarlo cuando tengamos una API, vamos a tener que cambiar el fetch por esto fetch('https://api.wibond.dev/status')
 
