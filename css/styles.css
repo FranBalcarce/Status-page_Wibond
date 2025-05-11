@@ -158,6 +158,29 @@ body {
   color: #2563eb; /* Azul más intenso al pasar el mouse */
 }
 
+.health-bar {
+  display: flex;
+  gap: 2px;
+  margin: 8px 0;
+  flex-wrap: wrap;
+}
+
+.bar {
+  width: 6px;
+  height: 20px;
+  border-radius: 2px;
+}
+
+.verde {
+  background-color: #22c55e;
+}
+.amarillo {
+  background-color: #facc15;
+}
+.rojo {
+  background-color: #ef4444;
+}
+
 @media (min-width: 768px) {
   .servicios-container {
     grid-template-columns: 1fr 1fr;
